@@ -3,10 +3,11 @@ const Eleicao = require('../models/Eleicao')
 class EleicaoController{
     async post(req,res){
         try {
-            const{nomeEleicao, opcoes}=req.body
+            const{nomeEleicao, opcoes, hash}=req.body
             const eleicao = {
                 nomeEleicao,
-                opcoes
+                opcoes,
+                hash
             }
             await Eleicao.create(eleicao)
             res.status(201).json({msg:"Eleição criada com sucesso"})

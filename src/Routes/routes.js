@@ -15,6 +15,6 @@ routes.get('/Eleicao', Eleicao.get)
 
 //Rota Voto
 routes.post('/Voto', Voto.post)
-routes.get('/voto', Voto.get)
+routes.get('/Voto', Voto.get)
 
 module.exports = routes
