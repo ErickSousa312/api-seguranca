@@ -12,7 +12,7 @@ class EleicaoController{
             await Eleicao.create(eleicao)
             res.status(201).json({msg:"Eleição criada com sucesso"})
         } catch (error) {
-            res.status(500).json({msg:"Eleição não foi criada com sucesso"})
+            res.status(500).json({msg: error})
         }
     }
     async get(req,res){
@@ -20,7 +20,7 @@ class EleicaoController{
             const eleicao = await Eleicao.find()
             res.status(201).json(eleicao)
         } catch (error) {
-            res.status(500).json({error: error.message})
+            res.status(500).json({ error})
         }
     }
     async deleteId (req,res){
@@ -34,7 +34,7 @@ class EleicaoController{
             await Eleicao.deleteOne({ _id: id })
             res.status(201).json({ msg: "Úsuario deletado" })
         } catch (error) {
-            res.status(500).json({ error: error.message })
+            res.status(500).json({error})
         }
     }
 }
