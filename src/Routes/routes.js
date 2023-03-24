@@ -12,9 +12,11 @@ routes.post('/', (req,res)=>{
 // Rota Eleicao
 routes.post('/Eleicao', Eleicao.post)
 routes.get('/Eleicao', Eleicao.get)
+routes.get('/Eleicao/:name', Eleicao.getName)
 
 //Rota Voto
 routes.post('/Voto', Voto.post)
 routes.get('/Voto', Voto.get)
+routes.get('/Voto/:name', Voto.getName)
 
 module.exports = routes
