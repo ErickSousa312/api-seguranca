@@ -37,21 +37,20 @@ class EleicaoController{
             res.status(500).json({error})
         }
     }
-    async getName(req,res){
+    async getName(req, res) {
         try {
-            const name = req.params.name;
-            Eleicao.find({nomeEleicao: name})
-            .exec((err, resultadoEleicao) => {
-                if (err) {
-                    res.status(400).json({ message: `${err.message} - Erro ao buscar resultados de eleição` })
-                } else {
-                    res.status(200).json(resultadoEleicao)
-                }
-            });
+          const name = req.params.name;
+          const resultadoEleicao = await Eleicao.find({ nomeEleicao: name }).exec();
+          if (resultadoEleicao.length === 0) {
+            res.status(404).json({ message: `Nenhuma eleição encontrada com o nome ${name}` });
+          } else {
+            res.status(200).json(resultadoEleicao);
+          }
         } catch (error) {
-            res.status(500).json({ error})
+          res.status(500).json({ error });
         }
-    }
+      }
+      
 }
 
 module.exports = new EleicaoController();

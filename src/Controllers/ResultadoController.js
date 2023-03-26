@@ -10,6 +10,7 @@ class ResultadoController {
                 voto,
                 hash
             }
+            console.log(Voto)
             await ResultadoEleicao.create(Voto),
             res.status(201).json({msg:"Voto Registrado"})
         } catch (error){
