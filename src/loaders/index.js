@@ -1,6 +1,6 @@
 const startDB = require('./mongoBD');
 class Loaders {
-  start ( ){
+  start (){
     startDB();
   }
 }

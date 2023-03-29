@@ -16,12 +16,14 @@ class EleicaoController{
         }
     }
     async get(req,res){
-        try {
-            const eleicao = await Eleicao.find()
-            res.status(201).json(eleicao)
-        } catch (error) {
-            res.status(500).json({ error})
-        }
+      Eleicao.find()
+        .then((eleicao) => {
+          res.status(201).json(eleicao);
+        })
+        .catch((err) => {
+          console.error(err);
+          res.status(500).json({ message: 'Erro ao buscar eleições' });
+        });
     }
     async deleteId (req,res){
         const id = req.parms.id
