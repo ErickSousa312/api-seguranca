@@ -52,6 +52,13 @@ class EleicaoController{
           res.status(500).json({ error });
         }
       }
+    async postVoto(req,res){
+      try {
+        
+      } catch (error) {
+        
+      }
+    }
       
 }
 

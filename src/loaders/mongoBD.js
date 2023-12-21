@@ -7,7 +7,7 @@ mongoose.set("strictQuery", true)
 
 const user = 'ericksousa312'
 const password = 'mssg170877'
-const url = `mongodb+srv://${user}:${password}@clusterick.g3gnoap.mongodb.net/BancoEleicao?retryWrites=true&w=majority`
+const url = `mongodb://192.168.100.133:27018/`
 
 async function startDB(){
     mongoose.set("strictQuery", true)
